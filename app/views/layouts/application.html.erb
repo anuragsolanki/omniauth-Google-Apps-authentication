@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoogleApps</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<% if current_user %>
+	<%= link_to "Logout", logout_path %>
+<% else %>
+	<%= link_to "Login to admin panel", '/auth/admin' %>
+<% end %>
+<%= yield %>
+</body>
+</html>
